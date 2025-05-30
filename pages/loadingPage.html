@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading Animation</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: sans-serif;
+            background: transparent;
+        }
+
+        #message {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 2rem;
+            color: #333;
+            z-index: 10;
+        }
+
+        #screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="message">Loading content...</div>
+    <canvas id="screen"></canvas>
+
+    <script>
+        const canvas = document.getElementById("screen");
+        const ctx = canvas.getContext("2d");
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener("resize", resizeCanvas);
+        resizeCanvas();
+
+        let startTime = null;
+        const duration = 1000; 
+        const radius = Math.min(canvas.width, canvas.height) / 4;
+
+        function animate(timestamp) {
+            if (!startTime) startTime = timestamp;
+
+            const elapsed = timestamp - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const angle = progress * 2 * Math.PI;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.lineWidth = 10;
+            ctx.beginPath();
+            ctx.arc(canvas.width / 2, canvas.height / 2, radius, 0, angle, false);
+            ctx.stroke();
+
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            } else {
+                startTime = null;
+                requestAnimationFrame(animate); // restart
+            }
+        }
+
+        requestAnimationFrame(animate);
+
+        setTimeout(() => {
+            window.location.href = './home.html';
+        }, 3000);
+    </script>
+</body>
+
+</html>

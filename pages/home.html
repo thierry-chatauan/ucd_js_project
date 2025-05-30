@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Tracker</title>
+    <link rel="stylesheet" href="../style/home.css">
+    <script src="../scripts/script.js" defer></script>
+</head>
+
+<body class="container">
+
+    <header>
+        <button id="logOut" class="btns">Log out</button>
+    </header>
+
+    <main>
+        <form>
+            <h1>My Week Planner</h1>
+            <label for="task">Add new task: <input type="text" id="task"></label>
+            <label for="date">Date: <input type="date" id="date"></label>
+            <input type="button" value="Add Task" id="addTaskBtn" class="btns">
+            <input type="reset" value="Clear" id="clearBtn" class="btns">
+        </form>
+
+        <div class="tasks">
+            <h2>to do's:</h2>
+            <div id="res">
+            </div>
+        </div>
+
+    </main>
+
+    <footer></footer>
+</body>
+
+</html>
