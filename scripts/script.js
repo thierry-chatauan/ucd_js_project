@@ -5,8 +5,9 @@ let addTaskBtn = document.getElementById("addTaskBtn");
 let btnLogOut = document.getElementById("logOut");
 
 addTaskBtn.addEventListener("click", () => {
-  if (task === "") {
+  if (task.value === ""  || dateInput.value === "") {
     alert("Task or Date empty!!!");
+    return;
   }
 
   function formatDate() {

@@ -52,3 +52,9 @@ button {
 button:hover {
     background-color: #5a67d8;
 }
+
+@media screen and (max-width: 600px){
+    form{
+        width: 60%;
+    }
+}

@@ -89,7 +89,7 @@ input[type="text"], input[type="date"] {
   height: 150px;
   border: 2px solid black;
   border-radius: 10px;
-  box-shadow: 10px 10px 10px black;
+  
   display: flex;
   justify-content: center;
   gap: 15px;
@@ -107,7 +107,7 @@ input[type="text"], input[type="date"] {
 
 .risk_item {
   text-decoration: line-through;
-  color: lightgray;
+  color: rgb(131, 131, 131);
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -127,9 +127,13 @@ input[type="text"], input[type="date"] {
     height: 30px;
   }
 
+  .card-item{
+    box-shadow: 0px 0px 0px black;
+  }
+
   .card-item input[type="checkbox"] {
     width: 25px;
-    box-shadow: 0px 0px 0px black;
+    
   }
 
   #res {
