@@ -1,6 +1,6 @@
 # UCD JavaScript Project – Interactive To-Do List
 
-![screenshot of project](https://github.com/thierry-chatauan/ucd_js_project/blob/main/figma.png?raw=true)
+![screenshot of project]([https://github.com/thierry-chatauan/ucd_js_project/blob/main/figma.png?raw=true](https://github.com/thierry-chatauan/ucd_js_project/blob/main/assets/images/figma.png?raw=true))
 
 ## Concept
 
